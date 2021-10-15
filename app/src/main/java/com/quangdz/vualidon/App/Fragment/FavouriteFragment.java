@@ -53,10 +53,11 @@ public class FavouriteFragment extends Fragment {
     }
 
     private void loadDSYeuThich() {
-        phimList.clear();
+
         dbContext.getYeuThichDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                phimList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     YeuThich yeuThich = dataSnapshot.getValue(YeuThich.class);
@@ -80,8 +81,11 @@ public class FavouriteFragment extends Fragment {
                         });
                     }
                 }
-                adapter = new ListPhimAdapter(getContext(), phimList);
-                listView.setAdapter(adapter);
+                if(getActivity()!=null){
+                    adapter = new ListPhimAdapter(getContext(), phimList);
+                    listView.setAdapter(adapter);
+                }
+
 
             }
 

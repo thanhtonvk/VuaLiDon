@@ -41,53 +41,60 @@
             android:orientation="vertical">
 
             <TextView
-                android:textStyle="bold"
                 android:id="@+id/tv_phimmoidecu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PHIM MỚI ĐỀ CỬ"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <org.lucasr.twowayview.TwoWayView
-                android:orientation="horizontal"
                 android:id="@+id/lv_phimmoidecu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
             <TextView
-                android:textStyle="bold"
                 android:id="@+id/tv_phimchieurap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PHIM CHIẾU RẠP"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <org.lucasr.twowayview.TwoWayView
-                android:orientation="horizontal"
                 android:id="@+id/lv_phimchieurap"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
             <TextView
-                android:textStyle="bold"
                 android:id="@+id/tv_phimlemoicapnhat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PHIM LẺ MỚI CẬP NHẬT"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <org.lucasr.twowayview.TwoWayView
-                android:orientation="horizontal"
                 android:id="@+id/lv_phimlemoicapnhat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
             <TextView
-                android:textStyle="bold"
                 android:id="@+id/tv_phimhoathinh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PHIM HOẠT HÌNH"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <org.lucasr.twowayview.TwoWayView
-                android:orientation="horizontal"
                 android:id="@+id/lv_phimhoathinh"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

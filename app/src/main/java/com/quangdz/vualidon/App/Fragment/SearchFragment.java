@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,9 +38,10 @@ public class SearchFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
-    TwoWayView  lv_kinhdi, lv_hanhdong, lv_hoathinh, lv_tamlitinhcam, lv_hai, lv_vientuong, lv_ngontinh;
+    TwoWayView lv_kinhdi, lv_hanhdong, lv_hoathinh, lv_tamlitinhcam, lv_vientuong, lv_ngontinh;
     TextView tv_tatca;
     DatabaseDBContext dbContext;
+    TwoWayView lv_hai;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class SearchFragment extends Fragment {
         lv_hai = view.findViewById(R.id.lv_phimhai);
         lv_vientuong = view.findViewById(R.id.lv_vientuong);
         lv_ngontinh = view.findViewById(R.id.lv_ngontinh);
-        tv_tatca= view.findViewById(R.id.tv_tatcacacphim);
+        tv_tatca = view.findViewById(R.id.tv_tatcacacphim);
         dbContext = new DatabaseDBContext();
     }
 
@@ -86,8 +86,11 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_kinhdi.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_kinhdi.setAdapter(adapter);
+                }
+
 
             }
 
@@ -110,8 +113,10 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_hanhdong.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_hanhdong.setAdapter(adapter);
+                }
 
             }
 
@@ -134,8 +139,10 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_hoathinh.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_hoathinh.setAdapter(adapter);
+                }
 
             }
 
@@ -158,9 +165,11 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_tamlitinhcam.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_tamlitinhcam.setAdapter(adapter);
 
+                }
             }
 
             @Override
@@ -172,20 +181,23 @@ public class SearchFragment extends Fragment {
 
     private void setLv_hai() {
         ArrayList<Phim> phimList = new ArrayList<>();
-        phimList.clear();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                phimList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     Phim phim = dataSnapshot.getValue(Phim.class);
                     if (phim.getTheloai().toLowerCase().contains("hài")) {
                         phimList.add(phim);
+
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_hai.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_hai.setAdapter(adapter);
 
+                }
             }
 
             @Override
@@ -194,7 +206,8 @@ public class SearchFragment extends Fragment {
             }
         });
     }
-    private void setLv_vientuong(){
+
+    private void setLv_vientuong() {
         ArrayList<Phim> phimList = new ArrayList<>();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -206,9 +219,11 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_vientuong.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_vientuong.setAdapter(adapter);
 
+                }
             }
 
             @Override
@@ -217,7 +232,8 @@ public class SearchFragment extends Fragment {
             }
         });
     }
-    private void setLv_ngontinh(){
+
+    private void setLv_ngontinh() {
         ArrayList<Phim> phimList = new ArrayList<>();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -229,9 +245,11 @@ public class SearchFragment extends Fragment {
                         phimList.add(phim);
                     }
                 }
-                ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
-                lv_ngontinh.setAdapter(adapter);
+                if (getActivity() != null) {
+                    ListPhimAdapter adapter = new ListPhimAdapter(getContext(), phimList);
+                    lv_ngontinh.setAdapter(adapter);
 
+                }
             }
 
             @Override

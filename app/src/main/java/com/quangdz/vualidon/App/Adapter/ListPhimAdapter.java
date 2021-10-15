@@ -29,7 +29,7 @@ public class ListPhimAdapter extends ArrayAdapter<Phim> {
     List<Phim> phimArrayList;
     DatabaseDBContext dbContext;
 
-    public ListPhimAdapter(Context context, ArrayList<Phim> phimArrayList) {
+    public ListPhimAdapter(Context context, List<Phim> phimArrayList) {
         super(context, 0, phimArrayList);
         this.phimArrayList = phimArrayList;
         dbContext = new DatabaseDBContext();
@@ -41,33 +41,32 @@ public class ListPhimAdapter extends ArrayAdapter<Phim> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_phim, parent, false);
-            ImageView imageView = convertView.findViewById(R.id.img_poster);
-            TextView name_vi = convertView.findViewById(R.id.tv_name_vi);
-            TextView name_en = convertView.findViewById(R.id.tv_name_en);
-            Phim phim = phimArrayList.get(position);
-            String urlImg = String.format("https://img.youtube.com/vi/%s/mqdefault.jpg", phim.getId());
-            Glide.with(getContext()).load(urlImg).into(imageView);
-            name_vi.setText(phim.getTenphimtv());
-            name_en.setText(phim.getTenphimta());
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Common.phim = phimArrayList.get(position);
-                    view.getContext().startActivity(new Intent(view.getContext(), ThongTinPhimActivity.class));
-                }
-            });
-            convertView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    if (Common.taiKhoan.isAdmin()) {
-                        Common.phim = phimArrayList.get(position);
-                        view.getContext().startActivity(new Intent(view.getContext(), NhapPhimActivity.class));
-                    }
-                    return false;
-                }
-            });
         }
-
+        ImageView imageView = convertView.findViewById(R.id.img_poster);
+        TextView name_vi = convertView.findViewById(R.id.tv_name_vi);
+        TextView name_en = convertView.findViewById(R.id.tv_name_en);
+        Phim phim = phimArrayList.get(position);
+        String urlImg = String.format("https://img.youtube.com/vi/%s/mqdefault.jpg", phim.getId());
+        Glide.with(getContext()).load(urlImg).into(imageView);
+        name_vi.setText(phim.getTenphimtv());
+        name_en.setText(phim.getTenphimta());
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Common.phim = phimArrayList.get(position);
+                view.getContext().startActivity(new Intent(view.getContext(), ThongTinPhimActivity.class));
+            }
+        });
+        convertView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (Common.taiKhoan.isAdmin()) {
+                    Common.phim = phimArrayList.get(position);
+                    view.getContext().startActivity(new Intent(view.getContext(), NhapPhimActivity.class));
+                }
+                return false;
+            }
+        });
         return convertView;
     }
 

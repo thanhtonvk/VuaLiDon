@@ -71,6 +71,7 @@
                     android:id="@+id/lv_phimkinhdi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
 
                 <View
@@ -89,6 +90,7 @@
                     android:id="@+id/lv_phimhanhdong"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
 
                 <View
@@ -107,6 +109,7 @@
                     android:id="@+id/lv_hoathinh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
 
                 <View
@@ -125,6 +128,7 @@
                     android:id="@+id/lv_phimtamlytinhcam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
 
                 <View
@@ -140,10 +144,12 @@
                     android:textStyle="bold" />
 
                 <org.lucasr.twowayview.TwoWayView
+                    android:orientation="horizontal"
                     android:id="@+id/lv_phimhai"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" />
+                    android:layout_height="match_parent"
+                    android:numColumns="2"
+                     />
 
                 <View
                     android:layout_width="match_parent"
@@ -166,6 +172,7 @@
                     android:id="@+id/lv_vientuong"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
 
                 <TextView
@@ -179,6 +186,7 @@
                     android:id="@+id/lv_ngontinh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:numColumns="2"
                     android:orientation="horizontal" />
             </LinearLayout>
         </ScrollView>

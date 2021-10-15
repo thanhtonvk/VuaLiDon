@@ -40,6 +40,7 @@ public class HomeFragment extends Fragment {
     TwoWayView lv_phimmoidecu, lv_phimchieurap, lv_phimlecapnhat, lv_phimhoathinh;
     ListPhimAdapter listPhimAdapter;
     DatabaseDBContext dbContext;
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -74,57 +75,68 @@ public class HomeFragment extends Fragment {
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()
-                     ) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
+                ) {
                     Phim phim = dataSnapshot.getValue(Phim.class);
-                    if(phim.isDecu()){
+                    if (phim.isDecu()) {
                         phimMoiDeCuList.add(phim);
                     }
                 }
-                listPhimAdapter = new ListPhimAdapter(getContext(),phimMoiDeCuList);
-                lv_phimmoidecu.setAdapter(listPhimAdapter);
+                if (getActivity() != null) {
+                    listPhimAdapter = new ListPhimAdapter(getContext(), phimMoiDeCuList);
+                    lv_phimmoidecu.setAdapter(listPhimAdapter);
+                }
+
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
-    private void setPhimChieuRap(){
+
+    private void setPhimChieuRap() {
         phimChieuRapList.clear();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     Phim phim = dataSnapshot.getValue(Phim.class);
-                    if(phim.isPhimhot()){
+                    if (phim.isPhimhot()) {
                         phimChieuRapList.add(phim);
                     }
                 }
-                listPhimAdapter = new ListPhimAdapter(getContext(),phimChieuRapList);
-                lv_phimchieurap.setAdapter(listPhimAdapter);
+                if (getActivity() != null) {
+                    listPhimAdapter = new ListPhimAdapter(getContext(), phimChieuRapList);
+                    lv_phimchieurap.setAdapter(listPhimAdapter);
+                }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
-    private void setPhimLeCapNhat(){
+
+    private void setPhimLeCapNhat() {
         phimLeCapNhatList.clear();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     Phim phim = dataSnapshot.getValue(Phim.class);
-                    if(phim.isPhimmoi()){
+                    if (phim.isPhimmoi()) {
                         phimLeCapNhatList.add(phim);
                     }
                 }
-                listPhimAdapter = new ListPhimAdapter(getContext(),phimLeCapNhatList);
-                lv_phimlecapnhat.setAdapter(listPhimAdapter);
+                if (getActivity() != null) {
+                    listPhimAdapter = new ListPhimAdapter(getContext(), phimLeCapNhatList);
+                    lv_phimlecapnhat.setAdapter(listPhimAdapter);
+                }
             }
 
             @Override
@@ -133,20 +145,23 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-    private void setPhimHoatHinh(){
+
+    private void setPhimHoatHinh() {
         phimHoatHinhList.clear();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     Phim phim = dataSnapshot.getValue(Phim.class);
-                    if(phim.getTheloai().contains("Hoạt hình")){
+                    if (phim.getTheloai().contains("Hoạt hình")) {
                         phimHoatHinhList.add(phim);
                     }
                 }
-                listPhimAdapter = new ListPhimAdapter(getContext(),phimHoatHinhList);
-                lv_phimhoathinh.setAdapter(listPhimAdapter);
+                if (getActivity() != null) {
+                    listPhimAdapter = new ListPhimAdapter(getContext(), phimHoatHinhList);
+                    lv_phimhoathinh.setAdapter(listPhimAdapter);
+                }
             }
 
             @Override

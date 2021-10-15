@@ -17,14 +17,15 @@ import com.quangdz.vualidon.Model.Phim;
 import com.quangdz.vualidon.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AllPhimActivity extends AppCompatActivity {
 
     AutoCompleteTextView edt_timkiem;
-    GridView lv_listphim;
+    ListView lv_listphim;
     ListPhimAdapter phimAdapter;
     DatabaseDBContext dbContext;
-    ArrayList<Phim> phimArrayList;
+    List<Phim> phimArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,6 @@ public class AllPhimActivity extends AppCompatActivity {
     }
 
     private void loadDSPhim() {
-        phimArrayList.clear();
         dbContext.getPhimDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -56,5 +56,6 @@ public class AllPhimActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

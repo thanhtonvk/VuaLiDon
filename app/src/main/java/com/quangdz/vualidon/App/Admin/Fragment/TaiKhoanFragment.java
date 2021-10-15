@@ -40,7 +40,7 @@ public class TaiKhoanFragment extends Fragment {
 
     AutoCompleteTextView edt_timkiem;
     ListView lv_taikhoan;
-    ArrayAdapter<TaiKhoan>arrayAdapter;
+    ArrayAdapter<TaiKhoan> arrayAdapter;
     DatabaseDBContext dbContext;
     List<TaiKhoan> taiKhoanList;
 
@@ -87,19 +87,22 @@ public class TaiKhoanFragment extends Fragment {
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setTitle("Đang lấy danh sách tài khoản");
         progressDialog.show();
-        taiKhoanList.clear();
+
         dbContext.getTaiKhoanDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                taiKhoanList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()
                 ) {
                     taiKhoanList.add(dataSnapshot.getValue(TaiKhoan.class));
                 }
-                arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,taiKhoanList);
-                lv_taikhoan.setAdapter(arrayAdapter);
-                edt_timkiem.setAdapter(arrayAdapter);
-                progressDialog.dismiss();
+                if (getActivity() != null) {
+                    arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, taiKhoanList);
+                    lv_taikhoan.setAdapter(arrayAdapter);
+                    edt_timkiem.setAdapter(arrayAdapter);
+                    progressDialog.dismiss();
+                }
+
             }
 
             @Override

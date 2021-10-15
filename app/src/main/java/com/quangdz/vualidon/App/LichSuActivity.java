@@ -17,11 +17,12 @@ import com.quangdz.vualidon.Model.Phim;
 import com.quangdz.vualidon.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LichSuActivity extends AppCompatActivity {
 
     ListView lv_lichsu;
-    ArrayList<Phim> phimArrayList;
+    List<Phim> phimArrayList;
     DatabaseDBContext dbContext;
     ListPhimAdapter phimAdapter;
 
@@ -36,7 +37,7 @@ public class LichSuActivity extends AppCompatActivity {
     }
 
     private void loadLichSu() {
-
+        phimArrayList.clear();
         dbContext.getLichSuDB().reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -66,6 +67,7 @@ public class LichSuActivity extends AppCompatActivity {
                 }
                 phimAdapter = new ListPhimAdapter(LichSuActivity.this, phimArrayList);
                 lv_lichsu.setAdapter(phimAdapter);
+
 
             }
 
