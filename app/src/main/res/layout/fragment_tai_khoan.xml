@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".App.Admin.Fragment.TaiKhoanFragment"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/black"
+            android:drawableLeft="@drawable/ic_video"
+            android:gravity="center"
+            android:text="Trang"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/lg_1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text=" quản trị"
+            android:textColor="#FDD835"
+            android:textSize="40sp" />
+    </RelativeLayout>
+    <AutoCompleteTextView
+        android:id="@+id/edt_timkiem"
+        android:gravity="center"
+        android:hint="Tìm kiếm"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/border_button"
+        android:backgroundTint="#80FFFFFF"/>
+    <ListView
+        android:backgroundTint="#80FFFFFF"
+        android:background="@drawable/border_button"
+        android:layout_margin="20dp"
+        android:id="@+id/lv_dstaikhoan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

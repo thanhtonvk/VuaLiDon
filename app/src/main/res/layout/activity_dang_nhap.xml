@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".App.DangNhapActivity"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:weightSum="5">
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@color/black"
+            android:drawableLeft="@drawable/ic_video"
+            android:gravity="center"
+            android:text="Vua"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/lg_1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="lidon"
+            android:textColor="#FDD835"
+            android:textSize="40sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mang cả thế giới phim đến chiếc đi động của bạn"
+            android:textColor="@color/white"
+            android:layout_below="@id/lg_1"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/edt_email"
+            android:inputType="textEmailAddress"
+            android:layout_margin="20dp"
+            android:background="@drawable/bogoc"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Email"
+            android:textColor="@color/white"
+            android:textColorHint="#80FFFFFF"/>
+        <EditText
+            android:id="@+id/edt_matkhau"
+            android:inputType="textPassword"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bogoc"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Mật khẩu"
+            android:textColor="@color/white"
+            android:textColorHint="#80FFFFFF"/>
+        <Button
+            android:id="@+id/btn_dangnhap"
+            android:textColor="@color/white"
+            android:text="Đăng nhập"
+            android:backgroundTint="#D50000"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bogoc"/>
+        <Button
+            android:id="@+id/btn_dangky"
+            android:textColor="@color/white"
+            android:text="Đăng ký"
+            android:backgroundTint="#FDD835"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bogoc"/>
+    </LinearLayout>
+</LinearLayout>

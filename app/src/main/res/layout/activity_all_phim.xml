@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".App.AllPhimActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/black"
+            android:drawableLeft="@drawable/ic_video"
+            android:gravity="center"
+            android:text="Vua"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/lg_1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="lidon"
+            android:textColor="#FDD835"
+            android:textSize="40sp" />
+    </RelativeLayout>
+
+    <AutoCompleteTextView
+        android:textColor="@color/white"
+        android:id="@+id/edt_timkiemphim"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bogoc"
+        android:gravity="center"
+        android:hint="Tìm kiếm..."
+        android:textColorHint="@color/white" />
+
+    <GridView
+        android:numColumns="2"
+        android:id="@+id/lv_listphim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
+
+</LinearLayout>

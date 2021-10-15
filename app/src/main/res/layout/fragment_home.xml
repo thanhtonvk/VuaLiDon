@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".App.Fragment.HomeFragment">
+
+    <TextView
+        android:id="@+id/lg_1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/black"
+        android:drawableLeft="@drawable/ic_video"
+        android:gravity="center"
+        android:text="Vua"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/lg_1"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="lidon"
+        android:textColor="#FDD835"
+        android:textSize="40sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lg_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tv_phimmoidecu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHIM MỚI ĐỀ CỬ"
+                android:textColor="@color/white" />
+            <org.lucasr.twowayview.TwoWayView
+                android:orientation="horizontal"
+                android:id="@+id/lv_phimmoidecu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tv_phimchieurap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHIM CHIẾU RẠP"
+                android:textColor="@color/white" />
+            <org.lucasr.twowayview.TwoWayView
+                android:orientation="horizontal"
+                android:id="@+id/lv_phimchieurap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tv_phimlemoicapnhat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHIM LẺ MỚI CẬP NHẬT"
+                android:textColor="@color/white" />
+            <org.lucasr.twowayview.TwoWayView
+                android:orientation="horizontal"
+                android:id="@+id/lv_phimlemoicapnhat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/tv_phimhoathinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHIM HOẠT HÌNH"
+                android:textColor="@color/white" />
+            <org.lucasr.twowayview.TwoWayView
+                android:orientation="horizontal"
+                android:id="@+id/lv_phimhoathinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".App.ThongTinPhimActivity"
+    android:orientation="vertical"
+    android:background="@color/black">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/black"
+            android:drawableLeft="@drawable/ic_video"
+            android:gravity="center"
+            android:text="Vua"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/lg_1"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="lidon"
+            android:textColor="#FDD835"
+            android:textSize="40sp" />
+    </RelativeLayout>
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"/>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_xemphim"
+            android:textColor="@color/white"
+            android:backgroundTint="#F60000"
+            android:background="@drawable/border_button"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Xem phim"/>
+        <Button
+            android:id="@+id/btn_yeuthich"
+            android:backgroundTint="#1E88E5"
+            android:textColor="@color/white"
+            android:background="@drawable/border_button"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Thêm vào yêu thích"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="THÔNG TIN PHIM"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TÊN PHIM"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/tv_tenphim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên phim: "
+                android:textColor="#039BE5"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="THỂ LOẠI"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/tv_theloai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thể loại: "
+                android:textColor="#039BE5"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUỐC GIA"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/tv_quocgia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quốc gia: "
+                android:textColor="#039BE5"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DIỄN VIÊN"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/tv_dienvien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diễn viên: "
+                android:textColor="#039BE5"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MÔ TẢ"/>
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/tv_mota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mô tả: "
+                android:textColor="#039BE5"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
